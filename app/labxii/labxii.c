@@ -1,4 +1,5 @@
 #include "../../mcal/dio/dio_interface.h"
+#include "../../lib/BIT_MATH.h"
 #include "../../mcal/exti/exti_interface.h"
 #include <avr/interrupt.h>
 #include <util/delay.h>

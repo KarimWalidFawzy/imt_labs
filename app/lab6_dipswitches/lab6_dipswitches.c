@@ -1,4 +1,5 @@
 #include "../../mcal/dio/dio_interface.h"
+#include "../../lib/BIT_MATH.h"
 #include <util/delay.h>
 
 int main(void)

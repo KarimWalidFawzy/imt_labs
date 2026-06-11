@@ -32,7 +32,7 @@ int main(void)
         else
         {
             pos++;
-            if ((uint8_t)pos > 16 - length)
+            if (pos > (int8_t)(16 - length))
             {
                 pos = 16 - length;
                 direction = 1;
