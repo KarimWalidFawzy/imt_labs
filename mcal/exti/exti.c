@@ -2,7 +2,7 @@
 #include "../../lib/BIT_MATH.h"
 #include <avr/interrupt.h>
 
-static EXTI_Callback_t g_EXTI_Callback = 0;
+static EXTI_Callback_t g_EXTI_Callbacks[3] = {0, 0, 0};
 
 void EXTI_Enable(u8 interruptNum, u8 senseControl)
 {
@@ -36,12 +36,34 @@ void EXTI_Disable(u8 interruptNum)
     }
 }
 
-void EXTI_SetCallback(EXTI_Callback_t callback)
+void EXTI_SetCallback(u8 interruptNum, EXTI_Callback_t callback)
 {
-    g_EXTI_Callback = callback;
+    if (interruptNum < 3)
+    {
+        g_EXTI_Callbacks[interruptNum] = callback;
+    }
 }
 
 ISR(INT0_vect)
 {
-    if (g_EXTI_Callback) g_EXTI_Callback();
+    if (g_EXTI_Callbacks[EXTI_INT0])
+    {
+        g_EXTI_Callbacks[EXTI_INT0]();
+    }
+}
+
+ISR(INT1_vect)
+{
+    if (g_EXTI_Callbacks[EXTI_INT1])
+    {
+        g_EXTI_Callbacks[EXTI_INT1]();
+    }
+}
+
+ISR(INT2_vect)
+{
+    if (g_EXTI_Callbacks[EXTI_INT2])
+    {
+        g_EXTI_Callbacks[EXTI_INT2]();
+    }
 }

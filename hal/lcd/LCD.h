@@ -11,10 +11,10 @@
  * RS: PC0, RW: PC1, EN: PC2
  */
 
-#define LCD_DATA_PORT PORTD->PORT
-#define LCD_DATA_DIR  PORTD->DDR
-#define LCD_CTRL_PORT PORTC->PORT
-#define LCD_CTRL_DIR  PORTC->DDR
+#define LCD_DATA_PORT (PORTD->PORT)
+#define LCD_DATA_DIR  (PORTD->DDR)
+#define LCD_CTRL_PORT (PORTC->PORT)
+#define LCD_CTRL_DIR  (PORTC->DDR)
 
 #define LCD_RS_PIN    0
 #define LCD_RW_PIN    1
