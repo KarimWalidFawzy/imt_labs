@@ -1,0 +1,3 @@
+/*
+Control the LEDs on your kit by your computer ! Sending a number by the computer shall toggle the corresponding LED. i.e sending ‘1’ toggles LED 1 , sending 2 toggles LED 2 and so on …
+*/
