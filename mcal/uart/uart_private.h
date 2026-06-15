@@ -1,6 +1,6 @@
 #ifndef UART_PRIVATE_H
 #define UART_PRIVATE_H
-#include "essential_drivers/STD_TYPES.h"
+#include "../../lib/STD_TYPES.h"
 
 #define UDR     (*((volatile u8*)0x2C))
 #define UCSRA   (*((volatile u8*)0x2B))
